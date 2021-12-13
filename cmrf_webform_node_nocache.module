@@ -1,0 +1,16 @@
+<?php
+use Drupal\node\NodeInterface;
+
+/**
+ * @param array $build
+ * @param NodeInterface $node
+ * @param $display
+ * @param $view_mode
+ */
+function cmrf_webform_node_nocache_node_view(array &$build, NodeInterface $node, $display, $view_mode) {
+  $type = $node->getType();
+  if ($type == 'webform') {
+    $build['#cache']['max-age'] = 0;
+    \Drupal::service('page_cache_kill_switch')->trigger();
+  }
+}

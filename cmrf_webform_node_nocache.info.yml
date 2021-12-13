@@ -1,0 +1,8 @@
+name: 'CMRF Webform Node Nocache'
+type: module
+description: 'Webforms can be used as nodes. Nodes can be cached. This must be stopped'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'CiviCRM'
+dependencies:
+  - webform_node
